@@ -1,0 +1,16 @@
+E:\Programming\C#\UTILTSMaker\bin\Release\net10.0-windows\UTILTSMaker.exe
+E:\Programming\C#\UTILTSMaker\bin\Release\net10.0-windows\UTILTSMaker.deps.json
+E:\Programming\C#\UTILTSMaker\bin\Release\net10.0-windows\UTILTSMaker.runtimeconfig.json
+E:\Programming\C#\UTILTSMaker\bin\Release\net10.0-windows\UTILTSMaker.dll
+E:\Programming\C#\UTILTSMaker\bin\Release\net10.0-windows\UTILTSMaker.pdb
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.Form1.resources
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.csproj.GenerateResource.cache
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.AssemblyInfoInputs.cache
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.AssemblyInfo.cs
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.csproj.CoreCompileInputs.cache
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.dll
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\refint\UTILTSMaker.dll
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.pdb
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\UTILTSMaker.genruntimeconfig.cache
+E:\Programming\C#\UTILTSMaker\obj\Release\net10.0-windows\ref\UTILTSMaker.dll
