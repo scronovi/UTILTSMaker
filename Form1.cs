@@ -15,6 +15,7 @@ public partial class Form1 : Form
     string dateToProperty => dateToPicker.Value.ToString("yyyyMMddHHmm");
     string dateFromProperty => dateFromPicker.Value.ToString("yyyyMMddHHmm");
     string timeNowProperty => DateTime.Now.ToString("yyyyMMddHHmm");
+    string timeNowFormatProperty => DateTime.Now.ToString("yyyyMMdd:HHmm");
     string documentTimeProperty => documentTimeFromNetTextBox.Text;
     string meteringFromProperty => meteringFrom.Text;
     string meteringToProperty => meteringTo.Text;
@@ -70,7 +71,7 @@ public partial class Form1 : Form
         }
         else
         {
-            createTextFile(uniqueIdProperty, netAreaProperty, netOwnerProperty, path, dateToProperty, dateFromProperty, accountPointIDProperty, timeNowProperty, documentTimeProperty, meteringToProperty, meteringFromProperty, meteringTotal);
+            createTextFile(uniqueIdProperty, netAreaProperty, netOwnerProperty, path, dateToProperty, dateFromProperty, accountPointIDProperty, timeNowProperty, documentTimeProperty, meteringToProperty, meteringFromProperty, meteringTotal, timeNowFormatProperty);
             MessageBox.Show("Filen har skapats!");
             outputPathTextBox.Text = "";
         }
@@ -94,7 +95,7 @@ public partial class Form1 : Form
         
     }
 
-    private void createTextFile(string uniqueId, string netArea, string netOwner, string path, string dateTo, string dateFrom, string accountPoint, string timeNow, string documentTime, string meteringTo, string meteringFrom, string meteringTotal)
+    private void createTextFile(string uniqueId, string netArea, string netOwner, string path, string dateTo, string dateFrom, string accountPoint, string timeNow, string documentTime, string meteringTo, string meteringFrom, string meteringTotal, string timeNowFormat)
     {
         string metering = "";
         if (consumtionAp.Checked)
@@ -134,7 +135,7 @@ public partial class Form1 : Form
         }
         string content_timeSeries15 = $"""
                                        UNA:+.? '
-                                       UNB+UNOC:3+{netOwner}:ZZ+49100:ZZ+260518:0823+{uniqueId}++23-DDQ-E66-T++1'
+                                       UNB+UNOC:3+{netOwner}:ZZ+49100:ZZ+{timeNowFormat}+{uniqueId}++23-DDQ-E66-T++1'
                                        UNH+1+UTILTS:D:02B:UN:E5SE5A'
                                        BGM+E66::260+{uniqueId}+9+AB'
                                        DTM+137:{timeNow}:203'
@@ -158,7 +159,7 @@ public partial class Form1 : Form
                                        """;
         string content_timeSeries1 = $"""
                                       UNA:+.? '
-                                      UNB+UNOC:3+{netOwner}:ZZ+49100:ZZ+260522:1321+{uniqueId}++23-DDQ-E66-S++1'
+                                      UNB+UNOC:3+{netOwner}:ZZ+49100:ZZ+{timeNowFormat}+{uniqueId}++23-DDQ-E66-S++1'
                                       UNH+1+UTILTS:D:02B:UN:E5SE0A'
                                       BGM+E66::260+{uniqueId}+9+AB'
                                       DTM+137:{timeNow}:203'

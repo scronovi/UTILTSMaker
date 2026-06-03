@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UTILTSMaker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.0+1c741fb65cf62997b939a30fda3d695db591e87b")]
 [assembly: System.Reflection.AssemblyProductAttribute("UTILTSMaker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UTILTSMaker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
