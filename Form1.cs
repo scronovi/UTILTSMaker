@@ -39,7 +39,7 @@ public partial class Form1 : Form
     private void timeSeries1_CheckedChanged(object sender, EventArgs e)
     {
         timeSeries15.Checked = false;
-        timvarden_Checkbox.Checked = false;
+        kvartsvarden_Checkbox.Checked = false;
         meteringTo.Visible = timeSeries1.Checked;
         meteringFrom.Visible = timeSeries1.Checked;
         meteringLabel.Visible = timeSeries1.Checked;
@@ -50,7 +50,7 @@ public partial class Form1 : Form
     private void timeSeries15_CheckedChanged(object sender, EventArgs e)
     {
         timeSeries1.Checked = false;
-        timvarden_Checkbox.Checked = false;
+        kvartsvarden_Checkbox.Checked = false;
     }
 
     private void consumtionAp_CheckedChanged(object sender, EventArgs e)
@@ -133,7 +133,7 @@ public partial class Form1 : Form
                 qtyLines.AppendLine("QTY+136:0.00'");
             }
         }
-        else if (timvarden_Checkbox.Checked)
+        else if (kvartsvarden_Checkbox.Checked)
         {
             for (int i = 0; i < valuesArray.Length; i++)
             {
@@ -219,7 +219,7 @@ public partial class Form1 : Form
         }else if (timeSeries1.Checked && !timeSeries15.Checked)
         {
             File.WriteAllText(path, content_timeSeries1);
-        }else if (timvarden_Checkbox.Checked && !timeSeries15.Checked && !timeSeries1.Checked)
+        }else if (kvartsvarden_Checkbox.Checked && !timeSeries15.Checked && !timeSeries1.Checked)
         {
             File.WriteAllText(path, content_timeSeries15);
         }

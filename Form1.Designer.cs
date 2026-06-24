@@ -57,7 +57,7 @@ partial class Form1
         meteringTo = new System.Windows.Forms.TextBox();
         meteringFrom = new System.Windows.Forms.TextBox();
         meteringTotalBox = new System.Windows.Forms.TextBox();
-        timvarden_Checkbox = new System.Windows.Forms.CheckBox();
+        kvartsvarden_Checkbox = new System.Windows.Forms.CheckBox();
         SuspendLayout();
         // 
         // inputBox
@@ -133,9 +133,9 @@ partial class Form1
         // 
         timeSeries15.Location = new System.Drawing.Point(363, 202);
         timeSeries15.Name = "timeSeries15";
-        timeSeries15.Size = new System.Drawing.Size(116, 21);
+        timeSeries15.Size = new System.Drawing.Size(100, 21);
         timeSeries15.TabIndex = 11;
-        timeSeries15.Text = "Kvartsavläst (15)";
+        timeSeries15.Text = "Timvärden";
         timeSeries15.UseVisualStyleBackColor = true;
         timeSeries15.CheckedChanged += timeSeries15_CheckedChanged;
         // 
@@ -298,19 +298,19 @@ partial class Form1
         meteringTotalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         meteringTotalBox.Visible = false;
         // 
-        // timvarden_Checkbox
+        // kvartsvarden_Checkbox
         // 
-        timvarden_Checkbox.Location = new System.Drawing.Point(485, 202);
-        timvarden_Checkbox.Name = "timvarden_Checkbox";
-        timvarden_Checkbox.Size = new System.Drawing.Size(84, 21);
-        timvarden_Checkbox.TabIndex = 12;
-        timvarden_Checkbox.Text = "Timvärden";
-        timvarden_Checkbox.UseVisualStyleBackColor = true;
+        kvartsvarden_Checkbox.Location = new System.Drawing.Point(469, 202);
+        kvartsvarden_Checkbox.Name = "kvartsvarden_Checkbox";
+        kvartsvarden_Checkbox.Size = new System.Drawing.Size(100, 21);
+        kvartsvarden_Checkbox.TabIndex = 12;
+        kvartsvarden_Checkbox.Text = "Kvartsvärden";
+        kvartsvarden_Checkbox.UseVisualStyleBackColor = true;
         // 
         // Form1
         // 
         ClientSize = new System.Drawing.Size(794, 704);
-        Controls.Add(timvarden_Checkbox);
+        Controls.Add(kvartsvarden_Checkbox);
         Controls.Add(meteringTotalBox);
         Controls.Add(meteringFrom);
         Controls.Add(meteringTo);
@@ -346,7 +346,7 @@ partial class Form1
         PerformLayout();
     }
 
-    private System.Windows.Forms.CheckBox timvarden_Checkbox;
+    private System.Windows.Forms.CheckBox kvartsvarden_Checkbox;
 
     private System.Windows.Forms.TextBox meteringTotalBox;
 
