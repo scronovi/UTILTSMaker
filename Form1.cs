@@ -39,6 +39,7 @@ public partial class Form1 : Form
     private void timeSeries1_CheckedChanged(object sender, EventArgs e)
     {
         timeSeries15.Checked = false;
+        timvarden_Checkbox.Checked = false;
         meteringTo.Visible = timeSeries1.Checked;
         meteringFrom.Visible = timeSeries1.Checked;
         meteringLabel.Visible = timeSeries1.Checked;
@@ -49,6 +50,7 @@ public partial class Form1 : Form
     private void timeSeries15_CheckedChanged(object sender, EventArgs e)
     {
         timeSeries1.Checked = false;
+        timvarden_Checkbox.Checked = false;
     }
 
     private void consumtionAp_CheckedChanged(object sender, EventArgs e)
@@ -112,21 +114,34 @@ public partial class Form1 : Form
             StringSplitOptions.RemoveEmptyEntries
             );
         StringBuilder qtyLines = new StringBuilder();
-        for (int i = 0; i < valuesArray.Length; i++)
+        if (timeSeries15.Checked)
         {
-            int seq = i * 4;
-            string value = valuesArray[i].Trim().Replace(',', '.');
-            qtyLines.AppendLine($"SEQ++{seq}'");
-            qtyLines.AppendLine($"QTY+136:{value}'");
+            for (int i = 0; i < valuesArray.Length; i++)
+            {
+                int seq = i * 4;
+                string value = valuesArray[i].Trim().Replace(',', '.');
+                qtyLines.AppendLine($"SEQ++{seq}'");
+                qtyLines.AppendLine($"QTY+136:{value}'");
 
-            qtyLines.AppendLine($"SEQ++{seq + 1}'");
-            qtyLines.AppendLine("QTY+136:0.00'");
+                qtyLines.AppendLine($"SEQ++{seq + 1}'");
+                qtyLines.AppendLine("QTY+136:0.00'");
 
-            qtyLines.AppendLine($"SEQ++{seq + 2}'");
-            qtyLines.AppendLine("QTY+136:0.00'");
+                qtyLines.AppendLine($"SEQ++{seq + 2}'");
+                qtyLines.AppendLine("QTY+136:0.00'");
 
-            qtyLines.AppendLine($"SEQ++{seq + 3}'");
-            qtyLines.AppendLine("QTY+136:0.00'");
+                qtyLines.AppendLine($"SEQ++{seq + 3}'");
+                qtyLines.AppendLine("QTY+136:0.00'");
+            }
+        }
+        else if (timvarden_Checkbox.Checked)
+        {
+            for (int i = 0; i < valuesArray.Length; i++)
+            {
+                int seq = i;
+                string value = valuesArray[i].Trim().Replace(',', '.');
+                qtyLines.AppendLine($"SEQ++{seq}'");
+                qtyLines.AppendLine($"QTY+220:{value}'");
+            }
         }
 
         if (documentTime == String.Empty)
@@ -204,6 +219,9 @@ public partial class Form1 : Form
         }else if (timeSeries1.Checked && !timeSeries15.Checked)
         {
             File.WriteAllText(path, content_timeSeries1);
+        }else if (timvarden_Checkbox.Checked && !timeSeries15.Checked && !timeSeries1.Checked)
+        {
+            File.WriteAllText(path, content_timeSeries15);
         }
         else
         {

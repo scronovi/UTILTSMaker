@@ -57,6 +57,7 @@ partial class Form1
         meteringTo = new System.Windows.Forms.TextBox();
         meteringFrom = new System.Windows.Forms.TextBox();
         meteringTotalBox = new System.Windows.Forms.TextBox();
+        timvarden_Checkbox = new System.Windows.Forms.CheckBox();
         SuspendLayout();
         // 
         // inputBox
@@ -132,7 +133,7 @@ partial class Form1
         // 
         timeSeries15.Location = new System.Drawing.Point(363, 202);
         timeSeries15.Name = "timeSeries15";
-        timeSeries15.Size = new System.Drawing.Size(206, 21);
+        timeSeries15.Size = new System.Drawing.Size(116, 21);
         timeSeries15.TabIndex = 11;
         timeSeries15.Text = "Kvartsavläst (15)";
         timeSeries15.UseVisualStyleBackColor = true;
@@ -143,7 +144,7 @@ partial class Form1
         consumtionAp.Location = new System.Drawing.Point(575, 175);
         consumtionAp.Name = "consumtionAp";
         consumtionAp.Size = new System.Drawing.Size(192, 21);
-        consumtionAp.TabIndex = 12;
+        consumtionAp.TabIndex = 13;
         consumtionAp.Text = "Konsumtion";
         consumtionAp.UseVisualStyleBackColor = true;
         consumtionAp.CheckedChanged += consumtionAp_CheckedChanged;
@@ -153,7 +154,7 @@ partial class Form1
         productionAp.Location = new System.Drawing.Point(575, 202);
         productionAp.Name = "productionAp";
         productionAp.Size = new System.Drawing.Size(192, 21);
-        productionAp.TabIndex = 13;
+        productionAp.TabIndex = 14;
         productionAp.Text = "Produktion";
         productionAp.UseVisualStyleBackColor = true;
         productionAp.CheckedChanged += productionAp_CheckedChanged;
@@ -172,7 +173,7 @@ partial class Form1
         netIdTextBox.Name = "netIdTextBox";
         netIdTextBox.PlaceholderText = "e.g. \"49100\"";
         netIdTextBox.Size = new System.Drawing.Size(403, 23);
-        netIdTextBox.TabIndex = 16;
+        netIdTextBox.TabIndex = 15;
         // 
         // netAreaTextBox
         // 
@@ -180,7 +181,7 @@ partial class Form1
         netAreaTextBox.Name = "netAreaTextBox";
         netAreaTextBox.PlaceholderText = "e.g. \"UMO\"";
         netAreaTextBox.Size = new System.Drawing.Size(403, 23);
-        netAreaTextBox.TabIndex = 18;
+        netAreaTextBox.TabIndex = 16;
         // 
         // netAreaLabel
         // 
@@ -231,7 +232,7 @@ partial class Form1
         accountingPointTextBox.Name = "accountingPointTextBox";
         accountingPointTextBox.PlaceholderText = "e.g. \"735999111222333444\"";
         accountingPointTextBox.Size = new System.Drawing.Size(403, 23);
-        accountingPointTextBox.TabIndex = 19;
+        accountingPointTextBox.TabIndex = 17;
         // 
         // accountPointIdLabel
         // 
@@ -247,7 +248,7 @@ partial class Form1
         documentTimeFromNetTextBox.Name = "documentTimeFromNetTextBox";
         documentTimeFromNetTextBox.PlaceholderText = "e.g. \"202605250945\" (yyyyMMddHHmm)";
         documentTimeFromNetTextBox.Size = new System.Drawing.Size(403, 23);
-        documentTimeFromNetTextBox.TabIndex = 25;
+        documentTimeFromNetTextBox.TabIndex = 18;
         // 
         // timeFromNetLabel
         // 
@@ -262,7 +263,7 @@ partial class Form1
         meteringLabel.Location = new System.Drawing.Point(363, 442);
         meteringLabel.Name = "meteringLabel";
         meteringLabel.Size = new System.Drawing.Size(404, 23);
-        meteringLabel.TabIndex = 28;
+        meteringLabel.TabIndex = 30;
         meteringLabel.Text = "Mätarställning:";
         meteringLabel.Visible = false;
         // 
@@ -272,7 +273,7 @@ partial class Form1
         meteringTo.Name = "meteringTo";
         meteringTo.PlaceholderText = "mätarställning slut";
         meteringTo.Size = new System.Drawing.Size(191, 23);
-        meteringTo.TabIndex = 30;
+        meteringTo.TabIndex = 20;
         meteringTo.Visible = false;
         meteringTo.TextChanged += meteringTo_TextChanged;
         // 
@@ -282,7 +283,7 @@ partial class Form1
         meteringFrom.Name = "meteringFrom";
         meteringFrom.PlaceholderText = "mätarställning start";
         meteringFrom.Size = new System.Drawing.Size(191, 23);
-        meteringFrom.TabIndex = 29;
+        meteringFrom.TabIndex = 19;
         meteringFrom.Visible = false;
         meteringFrom.TextChanged += meteringFrom_TextChanged;
         // 
@@ -297,9 +298,19 @@ partial class Form1
         meteringTotalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         meteringTotalBox.Visible = false;
         // 
+        // timvarden_Checkbox
+        // 
+        timvarden_Checkbox.Location = new System.Drawing.Point(485, 202);
+        timvarden_Checkbox.Name = "timvarden_Checkbox";
+        timvarden_Checkbox.Size = new System.Drawing.Size(84, 21);
+        timvarden_Checkbox.TabIndex = 12;
+        timvarden_Checkbox.Text = "Timvärden";
+        timvarden_Checkbox.UseVisualStyleBackColor = true;
+        // 
         // Form1
         // 
         ClientSize = new System.Drawing.Size(794, 704);
+        Controls.Add(timvarden_Checkbox);
         Controls.Add(meteringTotalBox);
         Controls.Add(meteringFrom);
         Controls.Add(meteringTo);
@@ -334,6 +345,8 @@ partial class Form1
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.CheckBox timvarden_Checkbox;
 
     private System.Windows.Forms.TextBox meteringTotalBox;
 
