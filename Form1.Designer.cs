@@ -58,6 +58,8 @@ partial class Form1
         meteringFrom = new System.Windows.Forms.TextBox();
         meteringTotalBox = new System.Windows.Forms.TextBox();
         kvartsvarden_Checkbox = new System.Windows.Forms.CheckBox();
+        meterNumberTextBox = new System.Windows.Forms.TextBox();
+        meterNumberLabel = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // inputBox
@@ -66,7 +68,7 @@ partial class Form1
         inputBox.Multiline = true;
         inputBox.Name = "inputBox";
         inputBox.PlaceholderText = "Input values..";
-        inputBox.Size = new System.Drawing.Size(336, 656);
+        inputBox.Size = new System.Drawing.Size(336, 731);
         inputBox.TabIndex = 0;
         // 
         // uniqueIdTextBox
@@ -193,17 +195,17 @@ partial class Form1
         // 
         // createFileButton
         // 
-        createFileButton.Location = new System.Drawing.Point(363, 604);
+        createFileButton.Location = new System.Drawing.Point(363, 679);
         createFileButton.Name = "createFileButton";
         createFileButton.Size = new System.Drawing.Size(403, 74);
-        createFileButton.TabIndex = 23;
+        createFileButton.TabIndex = 24;
         createFileButton.Text = "Skapa";
         createFileButton.UseVisualStyleBackColor = true;
         createFileButton.Click += createFileButton_Click;
         // 
         // outputPathLabel
         // 
-        outputPathLabel.Location = new System.Drawing.Point(363, 551);
+        outputPathLabel.Location = new System.Drawing.Point(363, 626);
         outputPathLabel.Name = "outputPathLabel";
         outputPathLabel.Size = new System.Drawing.Size(403, 23);
         outputPathLabel.TabIndex = 20;
@@ -211,17 +213,17 @@ partial class Form1
         // 
         // outputPathTextBox
         // 
-        outputPathTextBox.Location = new System.Drawing.Point(363, 575);
+        outputPathTextBox.Location = new System.Drawing.Point(363, 650);
         outputPathTextBox.Name = "outputPathTextBox";
         outputPathTextBox.Size = new System.Drawing.Size(328, 23);
-        outputPathTextBox.TabIndex = 21;
+        outputPathTextBox.TabIndex = 22;
         // 
         // outputPathButton
         // 
-        outputPathButton.Location = new System.Drawing.Point(697, 575);
+        outputPathButton.Location = new System.Drawing.Point(697, 650);
         outputPathButton.Name = "outputPathButton";
         outputPathButton.Size = new System.Drawing.Size(69, 23);
-        outputPathButton.TabIndex = 22;
+        outputPathButton.TabIndex = 23;
         outputPathButton.Text = "Bläddra";
         outputPathButton.UseVisualStyleBackColor = true;
         outputPathButton.Click += outputPathButton_Click;
@@ -260,7 +262,7 @@ partial class Form1
         // 
         // meteringLabel
         // 
-        meteringLabel.Location = new System.Drawing.Point(363, 442);
+        meteringLabel.Location = new System.Drawing.Point(363, 496);
         meteringLabel.Name = "meteringLabel";
         meteringLabel.Size = new System.Drawing.Size(404, 23);
         meteringLabel.TabIndex = 30;
@@ -269,27 +271,27 @@ partial class Form1
         // 
         // meteringTo
         // 
-        meteringTo.Location = new System.Drawing.Point(575, 470);
+        meteringTo.Location = new System.Drawing.Point(575, 524);
         meteringTo.Name = "meteringTo";
         meteringTo.PlaceholderText = "mätarställning slut";
         meteringTo.Size = new System.Drawing.Size(191, 23);
-        meteringTo.TabIndex = 20;
+        meteringTo.TabIndex = 21;
         meteringTo.Visible = false;
         meteringTo.TextChanged += meteringTo_TextChanged;
         // 
         // meteringFrom
         // 
-        meteringFrom.Location = new System.Drawing.Point(363, 470);
+        meteringFrom.Location = new System.Drawing.Point(363, 524);
         meteringFrom.Name = "meteringFrom";
         meteringFrom.PlaceholderText = "mätarställning start";
         meteringFrom.Size = new System.Drawing.Size(191, 23);
-        meteringFrom.TabIndex = 19;
+        meteringFrom.TabIndex = 20;
         meteringFrom.Visible = false;
         meteringFrom.TextChanged += meteringFrom_TextChanged;
         // 
         // meteringTotalBox
         // 
-        meteringTotalBox.Location = new System.Drawing.Point(363, 499);
+        meteringTotalBox.Location = new System.Drawing.Point(363, 553);
         meteringTotalBox.Name = "meteringTotalBox";
         meteringTotalBox.PlaceholderText = "total förbrukning";
         meteringTotalBox.ReadOnly = true;
@@ -307,9 +309,29 @@ partial class Form1
         kvartsvarden_Checkbox.Text = "Kvartsvärden";
         kvartsvarden_Checkbox.UseVisualStyleBackColor = true;
         // 
+        // meterNumberTextBox
+        // 
+        meterNumberTextBox.Location = new System.Drawing.Point(363, 470);
+        meterNumberTextBox.Name = "meterNumberTextBox";
+        meterNumberTextBox.PlaceholderText = "mätarnummer";
+        meterNumberTextBox.Size = new System.Drawing.Size(191, 23);
+        meterNumberTextBox.TabIndex = 19;
+        meterNumberTextBox.Visible = false;
+        // 
+        // meterNumberLabel
+        // 
+        meterNumberLabel.Location = new System.Drawing.Point(363, 442);
+        meterNumberLabel.Name = "meterNumberLabel";
+        meterNumberLabel.Size = new System.Drawing.Size(403, 23);
+        meterNumberLabel.TabIndex = 33;
+        meterNumberLabel.Text = "Mätarnummer";
+        meterNumberLabel.Visible = false;
+        // 
         // Form1
         // 
-        ClientSize = new System.Drawing.Size(794, 704);
+        ClientSize = new System.Drawing.Size(794, 765);
+        Controls.Add(meterNumberTextBox);
+        Controls.Add(meterNumberLabel);
         Controls.Add(kvartsvarden_Checkbox);
         Controls.Add(meteringTotalBox);
         Controls.Add(meteringFrom);
@@ -345,6 +367,9 @@ partial class Form1
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.TextBox meterNumberTextBox;
+    private System.Windows.Forms.Label meterNumberLabel;
 
     private System.Windows.Forms.CheckBox kvartsvarden_Checkbox;
 

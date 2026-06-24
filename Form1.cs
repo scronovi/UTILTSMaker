@@ -20,6 +20,7 @@ public partial class Form1 : Form
     string meteringFromProperty => meteringFrom.Text;
     string meteringToProperty => meteringTo.Text;
     string meteringTotal => meteringTotalBox.Text;
+    string meterNumber => meterNumberTextBox.Text;
     
     public Form1()
     {
@@ -44,6 +45,8 @@ public partial class Form1 : Form
         meteringFrom.Visible = timeSeries1.Checked;
         meteringLabel.Visible = timeSeries1.Checked;
         meteringTotalBox.Visible = timeSeries1.Checked;
+        meterNumberTextBox.Visible = timeSeries1.Checked;
+        meterNumberLabel.Visible = timeSeries1.Checked;
         inputBox.Enabled = !timeSeries1.Checked;
     }
 
@@ -73,7 +76,7 @@ public partial class Form1 : Form
         }
         else
         {
-            createTextFile(uniqueIdProperty, netAreaProperty, netOwnerProperty, path, dateToProperty, dateFromProperty, accountPointIDProperty, timeNowProperty, documentTimeProperty, meteringToProperty, meteringFromProperty, meteringTotal, timeNowFormatProperty);
+            createTextFile(uniqueIdProperty, netAreaProperty, netOwnerProperty, path, dateToProperty, dateFromProperty, accountPointIDProperty, timeNowProperty, documentTimeProperty, meteringToProperty, meteringFromProperty, meteringTotal, timeNowFormatProperty, meterNumber);
             MessageBox.Show("Filen har skapats!");
             outputPathTextBox.Text = "";
         }
@@ -97,7 +100,7 @@ public partial class Form1 : Form
         
     }
 
-    private void createTextFile(string uniqueId, string netArea, string netOwner, string path, string dateTo, string dateFrom, string accountPoint, string timeNow, string documentTime, string meteringTo, string meteringFrom, string meteringTotal, string timeNowFormat)
+    private void createTextFile(string uniqueId, string netArea, string netOwner, string path, string dateTo, string dateFrom, string accountPoint, string timeNow, string documentTime, string meteringTo, string meteringFrom, string meteringTotal, string timeNowFormat, string meterNumber)
     {
         string metering = "";
         if (consumtionAp.Checked)
@@ -196,7 +199,7 @@ public partial class Form1 : Form
                                       CAV+E17::260'
                                       SEQ++1'
                                       RFF+AES:101'
-                                      RFF+MG:697342847104340435'
+                                      RFF+MG:{meterNumber}'
                                       QTY+220:{meteringFrom}'
                                       DTM+597:{dateFrom}:203'
                                       CCI+++E22::260'
