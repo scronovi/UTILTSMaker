@@ -29,6 +29,7 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         inputBox = new System.Windows.Forms.TextBox();
         uniqueIdTextBox = new System.Windows.Forms.TextBox();
         dateFromPicker = new System.Windows.Forms.DateTimePicker();
@@ -361,9 +362,10 @@ partial class Form1
         Controls.Add(uniqueIdTextBox);
         Controls.Add(inputBox);
         FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         MaximizeBox = false;
-        ShowIcon = false;
         StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        Text = "UTILTSMaker";
         ResumeLayout(false);
         PerformLayout();
     }

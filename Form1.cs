@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices.JavaScript;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,6 +9,18 @@ namespace UTILTSMaker;
 
 public partial class Form1 : Form
 {
+    private static string AppVersion
+    {
+        get
+        {
+            string version = Assembly.GetExecutingAssembly()
+                                 .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+                                 .InformationalVersion
+                             ?? "Unknown";
+
+            return version.Split('+')[0];
+        }
+    }
     string uniqueIdProperty => uniqueIdTextBox.Text;
     string netAreaProperty => netAreaTextBox.Text;
     string netOwnerProperty => netIdTextBox.Text;
@@ -25,6 +38,9 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
+        
+        Text = $"UTILTSMaker v{AppVersion}";
+        
         uniqueIdTextBox.Text = "SEAB" + DateTime.Now.ToString("yyyyMMdd");
         
         dateFromPicker.Format = DateTimePickerFormat.Custom;

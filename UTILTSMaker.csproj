@@ -9,6 +9,7 @@
         <Version>1.1.5</Version>
         <AssemblyVersion>1.0.1</AssemblyVersion>
         <FileVersion>1.0.1.0</FileVersion>
+        <ApplicationIcon>Assets\asdIcon.ico</ApplicationIcon>
     </PropertyGroup>
 
 </Project>
